@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kronologi Kelahiran Pancasila</title>
+<style>
+:root{--red:#D62828;--red2:#fde8e8;--bg:#fff;--card:#fff;--tx:#2b2b2b;--ok:#1b8a3a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1416;--card:#2a1c1f;--tx:#f6eeee;--red2:#4a2226}}
+:root[data-theme="dark"]{--bg:#1d1416;--card:#2a1c1f;--tx:#f6eeee;--red2:#4a2226}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Nunito","Segoe UI",Arial,sans-serif;font-size:18px;line-height:1.5}
+header{background:var(--red);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:800}
+#bar{height:8px;background:var(--red2)}#bar i{display:block;height:100%;width:0;background:var(--red);transition:width .4s}
+main{max-width:760px;margin:0 auto;padding:16px}
+section{display:none;animation:pop .45s ease}section.on{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(-10px)}}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.card{background:var(--card);border:3px solid var(--red);border-radius:22px;padding:18px;margin:12px 0;box-shadow:0 5px 0 var(--red)}
+h1,h2{color:var(--red);margin:.3em 0}h1{font-size:2rem}
+.big{font-size:4.5rem;text-align:center;animation:bob 2s infinite}
+.btn{background:var(--red);color:#fff;border:0;border-radius:999px;padding:12px 24px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #8d1515;margin:6px 4px}
+.btn:active{transform:translateY(3px);box-shadow:none}.btn.w{background:var(--card);color:var(--red);border:3px solid var(--red)}
+.nav{display:flex;justify-content:space-between;flex-wrap:wrap}
+.tl{border-left:6px solid var(--red);margin-left:18px;padding-left:18px}
+.ev{position:relative;background:var(--red2);border-radius:16px;padding:10px 14px;margin:12px 0;animation:pop .4s}
+.ev:before{content:"";position:absolute;left:-33px;top:16px;width:18px;height:18px;border-radius:50%;background:#fff;border:5px solid var(--red)}
+.ev b{color:var(--red)}.ic{font-size:1.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--card);border:3px solid var(--red);border-radius:14px;padding:10px 12px;font:inherit;color:var(--tx);cursor:pointer;font-weight:700}
+.shake{animation:shake .35s}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:3px solid var(--red);border-radius:16px;padding:10px 14px;margin:8px 0;font:inherit;cursor:pointer}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.no{background:var(--red);color:#fff}
+#fb{font-weight:800;font-size:1.3rem;min-height:2.2em}.good{color:var(--ok)}.bad{color:var(--red)}
+textarea{width:100%;border:3px solid var(--red);border-radius:14px;padding:10px;font:inherit;background:var(--card);color:var(--tx)}
+</style>
+</head>
+<body>
+<header><span>🇮🇩 Pendidikan Pancasila</span><span>Kelas 5 • Fase C</span></header>
+<div id="bar"><i></i></div>
+<main>
+
+<section class="on">
+<div class="big">🦅</div>
+<h1 style="text-align:center">Kronologi Kelahiran Pancasila</h1>
+<div class="card">
+<p><b>Mata Pelajaran:</b> Pendidikan Pancasila</p>
+<p><b>Kelas / Fase:</b> 5 / C</p>
+<p><b>Nama Murid:</b> <input id="nm" placeholder="Tulis namamu di sini" style="font:inherit;border:3px solid var(--red);border-radius:12px;padding:6px 10px;width:100%;background:var(--card);color:var(--tx)"></p>
+</div>
+<div class="nav"><span></span><button class="btn" onclick="go(1)">Mulai Belajar 🚀</button></div>
+</section>
+
+<section>
+<h2>🎯 Tujuan Pembelajaran</h2>
+<div class="card"><p>Setelah belajar, kamu bisa:</p>
+<p>⭐ Menyebutkan peristiwa penting kelahiran Pancasila.</p>
+<p>⭐ Mengurutkan peristiwa itu dari yang paling awal.</p>
+<p>⭐ Membuat lini masa kelahiran Pancasila.</p></div>
+<div class="nav"><button class="btn w" onclick="go(0)">⬅ Kembali</button><button class="btn" onclick="go(2)">Lanjut ➡</button></div>
+</section>
+
+<section>
+<h2>📖 Materi Singkat</h2>
+<p>Pancasila lahir lewat perjalanan panjang di tahun 1945. Yuk, ikuti lini masanya!</p>
+<div class="tl" id="mat"></div>
+<div class="nav"><button class="btn w" onclick="go(1)">⬅ Kembali</button><button class="btn" onclick="go(3)">Lanjut ➡</button></div>
+</section>
+
+<section>
+<h2>🧩 Ayo Susun Lini Masa!</h2>
+<div class="card">Ketuk peristiwa yang terjadi <b>paling awal</b>, lalu berikutnya, sampai lini masa selesai.</div>
+<div class="chips" id="pool"></div>
+<p id="amsg" class="bad" style="font-weight:800"></p>
+<div class="tl" id="mine"></div>
+<div class="nav"><button class="btn w" onclick="initAct()">🔄 Ulangi</button><button class="btn" id="toq" onclick="go(4)">Ke Kuis ➡</button></div>
+</section>
+
+<section>
+<h2 id="qn"></h2>
+<div class="card"><div id="q" style="font-weight:800"></div><div id="opts"></div></div>
+<div id="fb"></div>
+<div class="nav"><span></span><button class="btn" id="nx" style="display:none" onclick="next()">Lanjut ➡</button></div>
+</section>
+
+<section>
+<div class="big" id="medal">🏆</div>
+<h2 style="text-align:center" id="res"></h2>
+<div class="card"><h2>💭 Refleksi</h2>
+<p>Bagaimana perasaanmu setelah belajar?</p>
+<button class="btn w" onclick="rf(1)">😄 Paham sekali</button><button class="btn w" onclick="rf(2)">🙂 Mulai paham</button><button class="btn w" onclick="rf(3)">🤔 Mau belajar lagi</button>
+<p id="rfm" style="font-weight:800;color:var(--red)"></p>
+<p>Peristiwa apa yang paling kamu ingat? Mengapa kita perlu menghargai para pendiri bangsa?</p>
+<textarea rows="3" placeholder="Tulis jawabanmu..."></textarea></div>
+<div class="nav"><button class="btn w" onclick="go(2)">📖 Baca Materi</button><button class="btn" onclick="startQ()">🔁 Ulangi Kuis</button></div>
+</section>
+
+</main>
+<script>
+var E=[["29 Mei – 1 Juni 1945","🏛️","Sidang pertama BPUPKI","Tokoh bangsa berkumpul membahas dasar negara Indonesia."],
+["1 Juni 1945","🎤","Pidato Ir. Soekarno","Bung Karno menyebut nama “Pancasila”. Tanggal ini jadi Hari Lahir Pancasila."],
+["22 Juni 1945","📜","Piagam Jakarta","Panitia Sembilan menulis rumusan dasar negara."],
+["7 Agustus 1945","👥","PPKI dibentuk","Panitia baru untuk menyiapkan kemerdekaan."],
+["17 Agustus 1945","🚩","Proklamasi Kemerdekaan","Soekarno dan Hatta membacakan teks proklamasi."],
+["18 Agustus 1945","⭐","Pancasila disahkan","PPKI mengesahkan Pancasila sebagai dasar negara."]];
+var Q=[["Sidang pertama BPUPKI dimulai pada tanggal …",["29 Mei 1945","17 Agustus 1945","22 Juni 1945","7 Agustus 1945"],0],
+["Siapa yang menyebut nama “Pancasila” dalam pidato 1 Juni 1945?",["Mohammad Hatta","Ir. Soekarno","Soepomo","Ki Hajar Dewantara"],1],
+["Hari Lahir Pancasila diperingati setiap tanggal …",["17 Agustus","18 Agustus","1 Juni","22 Juni"],2],
+["BPUPKI adalah badan yang bertugas …",["Menjaga keamanan negara","Menyiapkan kemerdekaan dan membahas dasar negara","Membangun jalan raya","Menjual hasil bumi"],1],
+["Panitia Sembilan menghasilkan …",["Teks Proklamasi","Bendera Merah Putih","Lagu Indonesia Raya","Piagam Jakarta"],3],
+["Pancasila disahkan sebagai dasar negara pada tanggal …",["18 Agustus 1945","1 Juni 1945","17 Agustus 1945","29 Mei 1945"],0],
+["Badan yang mengesahkan Pancasila adalah …",["BPUPKI","PPKI","Panitia Sembilan","DPR"],1],
+["Proklamasi Kemerdekaan Indonesia dibacakan pada …",["1 Juni 1945","7 Agustus 1945","17 Agustus 1945","18 Agustus 1945"],2],
+["Urutan peristiwa yang benar adalah …",["Proklamasi → Pidato Soekarno → Piagam Jakarta","Piagam Jakarta → Pidato Soekarno → Pengesahan","Pidato Soekarno → Piagam Jakarta → Proklamasi → Pengesahan","Pengesahan → Proklamasi → Pidato Soekarno"],2],
+["Mengapa kita perlu mengetahui sejarah lahirnya Pancasila?",["Supaya bisa menghargai perjuangan pendiri bangsa dan mengamalkan Pancasila","Supaya bisa libur sekolah","Supaya tidak perlu belajar lagi","Supaya menang lomba lari"],0]];
+var S=document.querySelectorAll("section"),cur=0,qi=0,sc=0,ai=0,$=function(i){return document.getElementById(i)};
+function go(i){S[cur].classList.remove("on");cur=i;S[i].classList.add("on");$("bar").firstChild.style.width=(i/5*100)+"%";if(i==3)initAct();if(i==4)startQ();window.scrollTo(0,0)}
+$("mat").innerHTML=E.map(function(e){return '<div class="ev"><span class="ic">'+e[1]+'</span> <b>'+e[0]+'</b><br><b style="color:inherit">'+e[2]+'</b><br>'+e[3]+'</div>'}).join("");
+function initAct(){ai=0;$("mine").innerHTML="";$("amsg").textContent="";$("amsg").className="bad";
+var ids=[0,1,2,3,4,5].sort(function(){return Math.random()-.5});
+$("pool").innerHTML=ids.map(function(i){return '<button class="chip" data-i="'+i+'">'+E[i][1]+' '+E[i][2]+'</button>'}).join("");
+$("pool").onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;var i=+b.dataset.i;
+if(i==ai){var d=document.createElement("div");d.className="ev";d.innerHTML='<span class="ic">'+E[i][1]+'</span> <b>'+E[i][0]+'</b><br>'+E[i][2];$("mine").appendChild(d);b.remove();ai++;$("amsg").className="good";$("amsg").textContent=ai==6?"🎉 Luar biasa! Lini masamu sudah lengkap!":"Luar biasa! Lanjut ke peristiwa berikutnya.";}
+else{b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");$("amsg").className="bad";$("amsg").textContent="Tetap semangat! Coba pilih peristiwa lain.";}}}
+function startQ(){qi=0;sc=0;go(4);show()}
+function show(){var q=Q[qi];$("qn").textContent="📝 Soal "+(qi+1)+" dari 10";$("q").textContent=q[0];$("fb").textContent="";$("nx").style.display="none";
+$("opts").innerHTML=q[1].map(function(t,i){return '<button class="opt" data-i="'+i+'">'+"ABCD"[i]+". "+t+'</button>'}).join("");
+$("opts").onclick=function(ev){var b=ev.target.closest(".opt");if(!b||b.disabled)return;var i=+b.dataset.i,ok=i==q[2];
+$("opts").querySelectorAll(".opt").forEach(function(x){x.disabled=true});
+$("opts").children[q[2]].classList.add("ok");if(!ok)b.classList.add("no");if(ok)sc++;
+$("fb").className=ok?"good":"bad";$("fb").textContent=ok?"🌟 Luar biasa!":"💪 Tetap semangat! Jawaban benar: "+"ABCD"[q[2]]+".";
+$("nx").style.display="";$("nx").textContent=qi==9?"Lihat Hasil 🏆":"Lanjut ➡"}}
+function next(){if(qi==9){var n=$("nm").value.trim();var s=sc*10;go(5);$("bar").firstChild.style.width="100%";
+$("medal").textContent=s>=80?"🏆":s>=60?"🥈":"🌱";
+$("res").textContent=(n?n+", n":"N")+"ilaimu "+s+" ("+sc+" benar dari 10). "+(s>=80?"Luar biasa!":"Tetap semangat!")}else{qi++;show()}}
+function rf(k){$("rfm").textContent=["","Luar biasa! Ceritakan ke temanmu ya. 🎉","Bagus! Baca materi sekali lagi supaya makin paham. 📖","Tetap semangat! Coba ulangi aktivitas lini masa. 💪"][k]}
+</script>
+</body>
+</html>
